@@ -1,0 +1,18 @@
+{
+  "name": "mdcl-service-demo",
+  "version": "2021.1.0",
+  "repository": "https://github.com/mdcl-co-il/mdcl-service-demo",
+  "author": "Aviad Blumenfeld <aviadblu@gmail.com>",
+  "private": false,
+  "license": "MIT",
+  "workspaces": [
+    "service/**"
+  ],
+  "scripts": {
+    "test": "lerna run test",
+    "diff": "lerna diff"
+  },
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  }
+}

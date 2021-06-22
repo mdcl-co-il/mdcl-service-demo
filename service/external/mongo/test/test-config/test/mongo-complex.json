@@ -1,0 +1,10 @@
+{
+	"connection": {
+		"dns_srv": true,
+		"username": "test-user",
+		"password": "somepass1234!",
+		"host": "testhost.test",
+		"port": "",
+		"dbname": "dbnametest"
+	}
+}

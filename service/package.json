@@ -1,0 +1,30 @@
+{
+  "name": "mdcl-service-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server",
+    "start-dev": "cross-env CONFIG_DIR=../config NODE_ENV=development nodemon server.js",
+    "test-only": "mocha",
+    "test": "yarn cover-enforce",
+    "report": "nyc report",
+    "cover": "nyc --reporter=html mocha --exit",
+    "cover-enforce": "yarn cover && yarn report && yarn enforce",
+    "enforce": "nyc check-coverage --lines 90 --functions 90 --branches 90"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server-express": "^2.21.0",
+    "chai": "^4.3.4",
+    "cross-env": "^7.0.3",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "graphql": "^15.5.0",
+    "mongodb": "^3.6.3",
+    "node-fetch": "^2.6.1",
+    "uuid": "^8.3.2"
+  }
+}

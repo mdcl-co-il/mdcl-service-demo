@@ -1,0 +1,6 @@
+{
+  "test-key": "test-value",
+  "nested-key": {
+    "nested-key1": "nested-value1"
+  }
+}

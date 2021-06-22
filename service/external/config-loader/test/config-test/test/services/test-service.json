@@ -1,0 +1,6 @@
+{
+  "applicationName": "test service config",
+  "nested-svc-key": {
+    "nested-key1": "nested-value1"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "@mdcl-co-il/config-loader",
+  "version": "2021.4.1",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "yarn cover-enforce",
+    "report": "nyc report",
+    "cover": "nyc --reporter=html mocha --exit",
+    "cover-enforce": "yarn cover && yarn report && yarn enforce",
+    "enforce": "nyc check-coverage --lines 90 --functions 90 --branches 90"
+  },
+  "author": "",
+  "repository": {
+    "url": "ssh://git@github.com/mdcl-co-il/mdcl-monorepo.git"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^8.2.1",
+    "nyc": "^15.1.0",
+    "should": "^13.2.3"
+  },
+  "gitHead": "1f45bc6a089c9ad8cf3bc02fcb24de2b85dcde36"
+}

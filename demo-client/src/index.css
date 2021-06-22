@@ -1,0 +1,41 @@
+html, body, #root, .container-fluid, .report-builder-wrapper {
+    height: 100%;
+}
+
+.top-bar {
+    padding: 10px 0;
+}
+
+.breadcrumb-bar {
+    padding-top: 10px;
+}
+
+.background-1 {
+    background-color: rgba(0,0,0,.03);
+}
+
+.actions-bar {
+    padding: 5px 0;
+
+}
+
+.btn-label {
+    margin-right: 7px;
+}
+
+.actions-bar button {
+    margin-right: 15px;
+}
+
+.edit-area {
+    border-top: 1px solid rgba(0,0,0,.03);
+    padding-top: 10px;
+}
+
+.main-edit-area {
+    border-left: 1px solid rgba(0,0,0,.03);
+}
+
+.main-edit-area .card {
+    margin-bottom: 10px;
+}
