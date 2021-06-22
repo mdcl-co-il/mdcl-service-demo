@@ -2,7 +2,6 @@ import {FormsSvc, UtilsSvc} from '../services'
 import {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import {useHistory} from 'react-router-dom';
-import FormFieldEditor from "../components/FormBuilder/FormFieldEditor";
 
 export default function FormsHome() {
     const history = useHistory();
@@ -17,13 +16,13 @@ export default function FormsHome() {
     };
 
     useEffect(() => {
-        const loadReports = async () => {
+        const loadForms = async () => {
             setLoading(true);
             const forms = await FormsSvc.loadForms();
             setForms(forms);
             setLoading(false);
         };
-        loadReports();
+        loadForms();
         return () => {
         };
     }, []);

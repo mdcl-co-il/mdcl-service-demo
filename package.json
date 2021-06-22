@@ -3,7 +3,7 @@
   "version": "2021.1.0",
   "repository": "https://github.com/mdcl-co-il/mdcl-service-demo",
   "author": "Aviad Blumenfeld <aviadblu@gmail.com>",
-  "private": false,
+  "private": true,
   "license": "MIT",
   "workspaces": [
     "service/**"

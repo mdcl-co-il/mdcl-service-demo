@@ -1,22 +1,17 @@
 import './FormBuilder.css'
 import {FormDataContext, FormFieldsDataContext} from "../../contexts/FormsBuilderContext";
 import {useForm} from "react-hook-form";
-import {FormsSvc, UtilsSvc} from "../../services";
-import {Link} from "react-router-dom";
+import {FormsSvc} from "../../services";
 import FormFieldEditor from "./FormFieldEditor";
 
 export default function FormBuilder() {
     const formData = FormDataContext();
     const formFieldsData = FormFieldsDataContext();
-    const {register, handleSubmit, watch, formState: {errors}} = useForm();
+    const {register, handleSubmit, formState: {errors}} = useForm();
 
     const onSubmit = async (data) => {
-        const res = await FormsSvc.updateForm(formData.id, data);
+        await FormsSvc.updateForm(formData.id, data);
         console.log("Form saved!");
-    };
-
-    const onFieldSubmit = async (data) => {
-
     };
 
     return (

@@ -1,5 +1,5 @@
 import {createContext, useCallback, useEffect, useState} from "react";
-import {useHistory, useParams} from "react-router-dom";
+import {useHistory} from "react-router-dom";
 
 export const AuthContext = createContext({
     isLoggedIn: false,
@@ -49,7 +49,7 @@ export function AuthContextProvider({children}) {
         localStorage.removeItem("loginData");
         localStorage.removeItem("profileData");
         history.push("/v2/login");
-    }, []);
+    }, [history]);
 
     const setProfileData = useCallback((data) => {
         setProfile(data);

@@ -1,4 +1,3 @@
-import {useState} from "react";
 import {FieldTypesContext} from "../../contexts/FormsBuilderContext";
 
 export default function FormFieldEditor({data}) {
