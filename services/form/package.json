@@ -1,0 +1,49 @@
+{
+  "name": "form",
+  "version": "2021.5.1",
+  "description": "",
+  "main": "server.js",
+  "private": true,
+  "scripts": {
+    "start": "node server",
+    "start-dev": "cross-env CONFIG_DIR=../../config NODE_ENV=development nodemon server.js",
+    "test-only": "mocha",
+    "test": "yarn cover-enforce",
+    "report": "nyc report",
+    "cover": "nyc --reporter=html mocha --exit",
+    "cover-enforce": "yarn cover && yarn report && yarn enforce",
+    "enforce": "nyc check-coverage --lines 90 --functions 90 --branches 90"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@mdcl-co-il/auth": "^2021.4.1",
+    "@mdcl-co-il/common": "^2021.4.4",
+    "@mdcl-co-il/config-loader": "^2021.8.1",
+    "@mdcl-co-il/logger": "^2021.4.1",
+    "@mdcl-co-il/models": "^2021.4.1",
+    "@mdcl-co-il/mongo": "^2021.8.1",
+    "apollo-server-express": "^2.21.0",
+    "cross-env": "^7.0.3",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "graphql": "^15.5.0",
+    "jsonwebtoken": "^8.5.1",
+    "lokijs": "^1.5.12",
+    "mongodb": "^3.6.3",
+    "mongoose": "^5.11.13",
+    "node-fetch": "^2.6.1",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^6.1.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.2.1",
+    "nyc": "^15.1.0",
+    "should": "^13.2.3"
+  }
+}

@@ -1,0 +1,37 @@
+.reportFormsWrapper {
+    margin-top: 10px;
+}
+
+.formSelectWrapper h3 {
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.fieldName {
+    user-select: none;
+    cursor: pointer;
+}
+
+.fieldName.disabled {
+    text-decoration: line-through;
+}
+
+.form-tree-item {
+    background-color: rgba(0, 0, 0, .03);
+    padding: 3px 5px;
+    border-radius: .25rem;
+    margin-bottom: 2px;
+    cursor: pointer;
+}
+
+.selectableField {
+    background-color: rgba(0, 0, 0, .09);
+}
+
+.reportColumn {
+    background-color: rgba(0, 0, 0, .03);
+}
+
+.columnHeader {
+    border-bottom: 1px solid gray;
+}

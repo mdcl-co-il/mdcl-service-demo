@@ -1,16 +1,19 @@
 {
-  "name": "mdcl-service-demo",
+  "name": "@mdcl-co-il/monorepo",
   "version": "2021.1.0",
-  "repository": "https://github.com/mdcl-co-il/mdcl-service-demo",
+  "repository": "https://github.com/mdcl-co-il/mdcl-monorepo",
   "author": "Aviad Blumenfeld <aviadblu@gmail.com>",
   "private": true,
-  "license": "MIT",
   "workspaces": [
-    "service/**"
+    "packages/**",
+    "services/**",
+    "web-client/**"
   ],
   "scripts": {
     "test": "lerna run test",
-    "diff": "lerna diff"
+    "new-version": "lerna version --conventional-commits --yes",
+    "diff": "lerna diff",
+    "publish-npms": "lerna publish from-package -y --no-verify-access"
   },
   "devDependencies": {
     "lerna": "^3.22.1"

@@ -1,0 +1,48 @@
+{
+  "name": "idp",
+  "version": "2021.1.4",
+  "description": "",
+  "main": "server.js",
+  "private": true,
+  "scripts": {
+    "start": "node server",
+    "start-dev": "cross-env CONFIG_DIR=../../config NODE_ENV=development nodemon server.js",
+    "test-only": "mocha",
+    "test": "yarn cover-enforce",
+    "report": "nyc report",
+    "cover": "nyc --reporter=html mocha --exit",
+    "cover-enforce": "yarn cover && yarn report && yarn enforce",
+    "enforce": "nyc check-coverage --lines 90 --functions 90 --branches 90"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@mdcl-co-il/auth": "./packages/auth",
+    "@mdcl-co-il/config-loader": "./packages/config-loader",
+    "@mdcl-co-il/logger": "./packages/logger",
+    "@mdcl-co-il/models": "./packages/models",
+    "@mdcl-co-il/mongo": "./packages/mongo",
+    "cross-env": "^7.0.3",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-jwt": "^6.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^3.6.3",
+    "mongoose": "^5.11.13",
+    "node-fetch": "^2.6.1",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^6.1.0",
+    "structured-log": "^0.2.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.2.1",
+    "nyc": "^15.1.0",
+    "should": "^13.2.3"
+  },
+  "gitHead": "1f45bc6a089c9ad8cf3bc02fcb24de2b85dcde36"
+}

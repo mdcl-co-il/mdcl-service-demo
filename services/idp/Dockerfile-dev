@@ -1,0 +1,27 @@
+FROM node:14.16.1-alpine
+
+ARG dockerAccessTokenSecretDefault
+ARG dockerRefreshTokenSecretDefault
+ENV ACCESS_TOKEN_SECRET=$dockerAccessTokenSecretDefault
+ENV REFRESH_TOKEN_SECRET=$dockerRefreshTokenSecretDefault
+
+## copy config folder
+COPY /config /www/config
+ENV CONFIG_DIR='/www/config'
+ENV SEQ_URL='http://seq'
+ENV NODE_ENV=docker
+
+COPY /services/idp/src /www/services/idp/src
+COPY /services/idp/server.js /www/services/idp/server.js
+COPY /services/idp/package.json /www/services/idp/package.json
+
+COPY /packages /www/services/idp/packages
+
+WORKDIR /www/services/idp
+
+RUN npm install --production
+
+
+EXPOSE 3002
+
+ENTRYPOINT [ "npm", "start" ]

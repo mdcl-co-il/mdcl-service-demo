@@ -1,0 +1,34 @@
+{
+  "name": "@mdcl-co-il/auth",
+  "version": "2021.4.1",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "yarn cover-enforce",
+    "report": "nyc report",
+    "cover": "nyc --reporter=html mocha --exit",
+    "cover-enforce": "yarn cover && yarn report && yarn enforce",
+    "enforce": "nyc check-coverage --lines 75 --functions 40 --branches 80"
+  },
+  "author": "",
+  "repository": {
+    "url": "ssh://git@github.com/mdcl-co-il/mdcl-monorepo.git"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@mdcl-co-il/models": "^2021.1.2"
+  },
+  "devDependencies": {
+    "mocha": "^8.2.1",
+    "mongoose": "^5.11.14",
+    "nyc": "^15.1.0",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^6.1.0",
+    "should": "^13.2.3",
+    "sinon": "^9.2.4",
+    "sinon-express-mock": "^2.2.1"
+  },
+  "gitHead": "1f45bc6a089c9ad8cf3bc02fcb24de2b85dcde36"
+}

@@ -1,0 +1,40 @@
+version: "3.9"
+
+services:
+  mongodb:
+    build:
+      context: .
+      dockerfile: ./mongo/Dockerfile
+    volumes:
+      - ./mongo/.local_mongo_hd:/data/db
+    ports:
+      - 27017:27017
+  seq:
+    image: datalust/seq
+    restart: unless-stopped
+    environment:
+      ACCEPT_EULA: 'Y'
+  nginx:
+    restart: always
+    build:
+      context: .
+      dockerfile: ./nginx/Dockerfile-dev
+    ports:
+      - 8081:8081
+  web-client:
+    build:
+      context: .
+      dockerfile: ./web-client/Dockerfile-dev
+    volumes:
+      - ./web-client/app/build:/usr/share/nginx/html/app
+    ports:
+      - 3000:3000
+  idp:
+    build:
+      context: .
+      dockerfile: ./services/idp/Dockerfile-dev
+    volumes:
+      - ./config:/www/config
+      - ./services/idp:/mdcl/services/idp
+    ports:
+      - 3002:3002

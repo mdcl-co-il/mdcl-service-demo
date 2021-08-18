@@ -1,0 +1,10 @@
+{
+	"connection": {
+		"dns_srv": false,
+		"username": "",
+		"password": "",
+		"host": "mongodb",
+		"port": 27017,
+		"dbname": "mdcldb"
+	}
+}

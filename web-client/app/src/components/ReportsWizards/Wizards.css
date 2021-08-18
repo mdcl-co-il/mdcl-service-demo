@@ -1,0 +1,19 @@
+.wizard-part {
+    margin-bottom: 10px;
+}
+
+.wizard-part-left {
+    max-width: 60px;
+}
+
+.wizard-part-right {
+    max-width: 70px;
+}
+
+.wizardEditor .btn-group {
+    margin-right: 10px;
+}
+
+#parseError {
+    color: red;
+}

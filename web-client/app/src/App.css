@@ -1,0 +1,17 @@
+.userBox {
+
+}
+
+.userBox .name-wrapper {
+    display: inline-block;
+    padding: 0 5px;
+}
+
+.forms-list-btn {
+    margin-left: 10px;
+}
+
+.downloadLinkIcon {
+    height: 30px;
+    margin-right: 5px;
+}
