@@ -17,11 +17,12 @@
   1. From project root run `yarn`, this will install all packages for the solution.
   3. From project root run `yarn test` to verify all components are pass tests.
   4. From project root, run (this will build and run static services):
-     - `docker-compose up -d --build`
+     - `docker compose up -d --build`
 
 ### Run dev environment:
   1. From project root, run: (if not running or changes has been made to Docker files)
-      - `docker-compose up -d`
+      - `docker compose up -d`
       -  This will run static services.
   2. Run `npm run start-dev` in the next directories: **/services/form**, this will start form service in watch mode (this services can be run in "debug" mode also)
-  3. Open [http://localhost:8081](http://localhost:8081)
+  3. Run `npm run start` in **web-client/app** to run React dev server
+  4. Open [http://localhost:8081](http://localhost:8081)

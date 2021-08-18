@@ -1,10 +1,10 @@
 {
 	"connection": {
-		"dns_srv": false,
-		"username": "",
-		"password": "",
-		"host": "localhost",
-		"port": 27017,
-		"dbname": "mdcldb"
+		"dns_srv": true,
+		"username": "voypost",
+		"password": "PcDWPaEAoa8HD9WP",
+		"host": "cluster0.ojwlw.mongodb.net",
+		"port": "",
+		"dbname": "ngn42"
 	}
 }
