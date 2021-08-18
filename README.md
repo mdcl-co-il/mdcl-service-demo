@@ -24,5 +24,5 @@
       - `docker compose up -d`
       -  This will run static services.
   2. Run `npm run start-dev` in the next directories: **/services/form**, this will start form service in watch mode (this services can be run in "debug" mode also)
-  3. Run `npm run start` in **web-client/app** to run React dev server
+  3. Run `npm start` in **web-client/app** to run React dev server
   4. Open [http://localhost:8081](http://localhost:8081)
