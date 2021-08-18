@@ -9,12 +9,6 @@ export default function LeftMenu() {
                 <li>
                     <Link to="/entitiesHome">Entities</Link>
                 </li>
-                <li>
-                    <Link to="/entityReports">Entity reports</Link>
-                </li>
-                <li>
-                    <Link to="/smartReport/Wizards">Smart Reports Wizards</Link>
-                </li>
             </ul>
         </>
     );

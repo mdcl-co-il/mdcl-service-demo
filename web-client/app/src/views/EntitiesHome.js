@@ -2,7 +2,6 @@ import {FormsSvc, UtilsSvc} from '../services'
 import {useEffect, useState} from "react";
 import {Link, useHistory} from "react-router-dom";
 import ConfirmModal from "../components/ConfirmModal";
-import FileImportModalRedux from "../components/Entities/FileImport/FileImportModalRedux";
 
 export default function EntitiesHome() {
     const history = useHistory();
@@ -10,8 +9,6 @@ export default function EntitiesHome() {
     const [forms, setForms] = useState([]);
     const [showDeleteConfirmModal, setShowDeleteConfirmModal] = useState(false);
     const [deleteConfirmModalCtx, setDeleteConfirmModalCtx] = useState({});
-    const [activeEntityImport, setActiveEntityImport] = useState(null);
-    const [showFileImportModal, setShowFileImportModal] = useState(false);
 
     const newForm = async (e) => {
         const formId = await FormsSvc.newForm();
@@ -42,16 +39,6 @@ export default function EntitiesHome() {
         const forms = await FormsSvc.loadForms();
         setForms(forms);
         setLoading(false);
-    };
-
-    const importFromFile = async (entityId) => {
-        setActiveEntityImport(entityId);
-        setShowFileImportModal(true);
-    };
-
-    const loadFromFileCompletedHandler = async () => {
-        setShowFileImportModal(false);
-        await loadEntities();
     };
 
     useEffect(() => {
@@ -100,14 +87,6 @@ export default function EntitiesHome() {
                                         <button type="button" className="btn btn-sm btn-outline-dark">Fill Form
                                         </button>
                                     </Link>
-                                    <Link to={'/entityReport/new/' + row.id + '/0'} className="forms-list-btn">
-                                        <button type="button" className="btn btn-sm btn-outline-dark">
-                                            Entity Report
-                                        </button>
-                                    </Link>
-                                    <button type="button" className="btn btn-sm btn-outline-dark forms-list-btn"
-                                            onClick={() => importFromFile(row.id)}>Import From File
-                                    </button>
                                     <button type="button" className="btn btn-sm btn-outline-danger forms-list-btn"
                                             onClick={() => deleteEntity(row.id)}>Delete
                                     </button>
@@ -118,12 +97,6 @@ export default function EntitiesHome() {
                     </table>
                 </div>
             )}
-
-            <FileImportModalRedux
-                show={showFileImportModal}
-                onHide={() => loadFromFileCompletedHandler()}
-                data={{entityId: activeEntityImport}}
-            />
         </>
     );
 }
